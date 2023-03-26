@@ -599,7 +599,8 @@ body {
     position: absolute;
     top: 88px;
     left: 50%;
-    transform: translateX(-50%) scale(1);
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
     width: 408px;
     min-height: 576px;
     background-color: #FCFCFC;
@@ -620,6 +621,8 @@ body {
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: var(--button-second-color);
+    fill: #000000;
+    transition: background-color var(--transition-parameters), fill var(--transition-parameters);
 }
 
 .is-hidden{
@@ -629,11 +632,17 @@ body {
 }
 
 .backdrop.is-hidden .modal{
-    transform: translateX(-50%) scale(0.5);
+    transform: translate(-50%, -50%) scale(0.5);
 }
 
 .modal-close-icon{
     width: 8px;
     height: 8px;
 
+}
+
+.modal-close:hover,
+.modal-close:focus{
+    background-color: var(--hover-color);
+    fill: var(--lightest-grey);
 }
